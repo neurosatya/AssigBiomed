@@ -1,7 +1,6 @@
 function recon = backproject(image,arrayOfAngles)
 %%
-% okay, 2 angles is not enough lets repeat this  with 180
-% angles
+
 
 [sy, sx] = size(image.im);
 res_x=image.dim(1);
@@ -22,10 +21,12 @@ end
 imagesc([1 sx]*res_x,[1 sy]*res_y,recon); colormap(gray)
 axis image;
 xlabel(['Position (mm)'],'FontSize',20)
-title(strcat('Backprojection with',,num2str(size(arrayOfAngles,2)),'\t',  'projections'),'FontSize',20)
+title(strcat('Backprojection with: '," ", num2str(size(arrayOfAngles,2)) ,  ' projections'),'FontSize',20)
 ylabel('Position (mm)','FontSize',20)
 set(gca,'FontSize',15,'LineWidth',2)
-recon=1
+
+
+
 end
 
 
